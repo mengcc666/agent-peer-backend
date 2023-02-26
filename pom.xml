@@ -14,6 +14,7 @@
 	<name>agent_peer</name>
 	<description>Agent peer demo project for Spring Boot</description>
 	<properties>
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
