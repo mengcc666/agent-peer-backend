@@ -1,8 +1,12 @@
 package hnu.csee.mengcc.agent_peer.todo_package;
 
+import org.springframework.data.annotation.Id;
+
 public class Todo {
 
-  @Id private String id;
+  @Id
+  private String id;
+
   private String desc;
   private boolean completed;
 
