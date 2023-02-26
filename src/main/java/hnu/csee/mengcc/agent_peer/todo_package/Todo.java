@@ -2,7 +2,7 @@ package hnu.csee.mengcc.agent_peer.todo_package;
 
 public class Todo {
 
-  private String id;
+  @Id private String id;
   private String desc;
   private boolean completed;
 
