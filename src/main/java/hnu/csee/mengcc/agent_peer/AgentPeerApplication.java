@@ -1,6 +1,6 @@
 package hnu.csee.mengcc.agent_peer;
 
-import hnu.csee.mengcc.agent_peer.Functions;
+import hnu.csee.mengcc.agent_peer.FunctionsRepo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +25,7 @@ public class AgentPeerApplication {
   public void startNetwork() throws InterruptedException {
     String[] commands = { "./network.sh", "up" };
     String path = "/root/workspace/fabric-samples/test-network";
-    Functions f = new Functions();
+    FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
   }
 
@@ -33,7 +33,7 @@ public class AgentPeerApplication {
   public void stopNetwork() throws InterruptedException {
     String[] commands = { "./network.sh", "down" };
     String path = "/root/workspace/fabric-samples/test-network";
-    Functions f = new Functions();
+    FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
   }
 }
