@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AgentPeerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AgentPeerApplication.class, args);
-	}
-	@GetMapping(value = "/hello")
+  public static void main(String[] args) {
+    SpringApplication.run(AgentPeerApplication.class, args);
+  }
+  @GetMapping(value = "/hello")
   public String hello(
     @RequestParam(value = "name", defaultValue = "World") String name
   ) {
@@ -36,5 +36,4 @@ public class AgentPeerApplication {
     Functions f = new Functions();
     f.InvokeCommandAtSpecifiedPath(commands, path);
   }
-
 }
