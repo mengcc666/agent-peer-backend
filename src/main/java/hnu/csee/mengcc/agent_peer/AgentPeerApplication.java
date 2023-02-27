@@ -41,7 +41,7 @@ public class AgentPeerApplication {
   @GetMapping(value = "/getBlockchainNetworkInfo")
   public void getBlockchainNetworkInfo() throws InterruptedException {
     String[] commands = { "docker", "ps", "-a" };
-    String path = "~/";
+    String path = "/root";
     FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
   }
