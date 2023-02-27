@@ -14,6 +14,7 @@ public class AgentPeerApplication {
   public static void main(String[] args) {
     SpringApplication.run(AgentPeerApplication.class, args);
   }
+
   @GetMapping(value = "/hello")
   public String hello(
     @RequestParam(value = "name", defaultValue = "World") String name
@@ -33,6 +34,14 @@ public class AgentPeerApplication {
   public void stopNetwork() throws InterruptedException {
     String[] commands = { "./network.sh", "down" };
     String path = "/root/workspace/fabric-samples/test-network";
+    FunctionsRepo f = new FunctionsRepo();
+    f.InvokeCommandAtSpecifiedPath(commands, path);
+  }
+
+  @GetMapping(value = "/getBlockchainNetworkInfo")
+  public void getBlockchainNetworkInfo() {
+    String[] commands = { "docker", "ps", "-a" };
+    String path = "~/";
     FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
   }
