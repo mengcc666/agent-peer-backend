@@ -39,7 +39,7 @@ public class AgentPeerApplication {
   }
 
   @GetMapping(value = "/getBlockchainNetworkInfo")
-  public void getBlockchainNetworkInfo() {
+  public void getBlockchainNetworkInfo() throws InterruptedException {
     String[] commands = { "docker", "ps", "-a" };
     String path = "~/";
     FunctionsRepo f = new FunctionsRepo();
