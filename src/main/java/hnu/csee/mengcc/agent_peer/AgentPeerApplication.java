@@ -50,7 +50,7 @@ public class AgentPeerApplication {
     @RequestParam(value = "name", defaultValue = "mychannel") String channelName
   ) throws InterruptedException{
     //./network.sh up createChannel -c mychannel -ca
-    String[] commands = { "./network.sh", "createChannel", "-c", channelName };
+    String[] commands = { "./network.sh", "createChannel", "-c", channelName, "-ca" };
     String path = "/root/workspace/fabric-samples/test-network";
     FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
