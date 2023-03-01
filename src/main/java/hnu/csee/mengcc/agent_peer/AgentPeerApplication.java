@@ -17,14 +17,21 @@ public class AgentPeerApplication {
 
   @GetMapping(value = "/hello")
   public String hello(
-    @RequestParam(value = "name", defaultValue = "World") String name
-  ) {
+      @RequestParam(value = "name", defaultValue = "World") String name) {
     return String.format("Hello %s!", name);
   }
 
   @GetMapping(value = "/startNetwork")
   public void startNetwork() throws InterruptedException {
     String[] commands = { "./network.sh", "up" };
+    String path = "/root/workspace/fabric-samples/test-network";
+    FunctionsRepo f = new FunctionsRepo();
+    f.InvokeCommandAtSpecifiedPath(commands, path);
+  }
+
+  @GetMapping(value = "/initCA")
+  public void initCA() throws InterruptedException {
+    String[] commands = { "./network.sh", "up", "-ca" };
     String path = "/root/workspace/fabric-samples/test-network";
     FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
@@ -45,4 +52,5 @@ public class AgentPeerApplication {
     FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
   }
+
 }
