@@ -45,6 +45,17 @@ public class AgentPeerApplication {
     f.InvokeCommandAtSpecifiedPath(commands, path);
   }
 
+  @GetMapping(value = "/createChannel")
+  public void createChannel(
+    @RequestParam(value = "name", defaultValue = "mychannel") String channelName
+  ) throws InterruptedException{
+    //./network.sh up createChannel -c mychannel -ca
+    String[] commands = { "./network.sh", "createChannel", "-c", channelName };
+    String path = "/root/workspace/fabric-samples/test-network";
+    FunctionsRepo f = new FunctionsRepo();
+    f.InvokeCommandAtSpecifiedPath(commands, path);
+  }
+
   @GetMapping(value = "/getBlockchainNetworkInfo")
   public void getBlockchainNetworkInfo() throws InterruptedException {
     String[] commands = { "docker", "ps", "-a" };
