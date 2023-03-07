@@ -9,5 +9,5 @@ import org.springframework.data.repository.query.Param;
 @RepositoryRestResource(collectionResourceRel = "todo", path = "todo")
 public interface TodoRepository extends MongoRepository<Todo, String> {
     List<Todo> findByDescLike(@Param("desc") String desc);
-    List<Todo> findByCompleted(@Param("completed" Boolean completed));
+    List<Todo> findByCompleted(@Param("completed") Boolean completed);
 }
