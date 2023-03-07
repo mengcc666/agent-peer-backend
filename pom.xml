@@ -37,6 +37,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hyperledger.fabric/fabric-gateway-java -->
+		<dependency>
+    		<groupId>org.hyperledger.fabric</groupId>
+    		<artifactId>fabric-gateway-java</artifactId>
+    		<version>2.2.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
