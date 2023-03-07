@@ -5,5 +5,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "todo", path = "todo")
 public interface TodoRepository extends MongoRepository<Todo, String> {
-    List<Todo> findByDescLike(@Param("desc") Stringdesc);
+    List<Todo> findByDescLike(@Param("desc") String desc);
 }
