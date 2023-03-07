@@ -8,6 +8,8 @@ public class Todo {
   private String desc;
   private boolean completed;
 
+  private User user;
+
   public String getId() {
     return id;
   }
@@ -30,5 +32,13 @@ public class Todo {
 
   public void setCompleted(boolean completed) {
     this.completed = completed;
+  }
+
+  public User getUser(){
+    return user;
+  }
+
+  public void setUser(User user){
+    this.user=user;
   }
 }
