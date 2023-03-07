@@ -1,7 +1,7 @@
 package hnu.csee.mengcc.agent_peer.todo_package;
 
 import org.springframework.data.annotation.Id;
-import hnu.csee.mengcc.agent_peer.user.User;
+import hnu.csee.mengcc.agent_peer.user.*;
 
 public class Todo {
   @Id
