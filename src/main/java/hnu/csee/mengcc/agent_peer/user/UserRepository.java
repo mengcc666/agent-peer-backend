@@ -6,5 +6,5 @@ import org.springframework.data.repository.query.Param;
 
 
 public interface UserRepository extends MongoRepository<User,String>{
-    List<User> findByUserEmail(@Param("userEmail") String userEmail);
+    List<User> findByEmail(@Param("email") String email);
 }
