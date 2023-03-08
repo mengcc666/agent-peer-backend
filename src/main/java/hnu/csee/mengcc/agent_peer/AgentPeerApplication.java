@@ -64,14 +64,14 @@ public class AgentPeerApplication {
     f.InvokeCommandAtSpecifiedPath(commands, path);
   }
 
-  @GetMapping(value = "/invokeChaincode")
-  public void invokeChaincode(
+  @GetMapping(value = "/deployChaincode")
+  public void deployChaincode(
     @RequestParam(value = "chaincodeName", defaultValue = "basic") String chaincodeName,
     @RequestParam(value = "chaincodePath", defaultValue = "../asset-transfer-basic/chaincode-javascript/") String chaincodePath,
     @RequestParam(value = "chaincodeLanguage", defaultValue = "javascript") String chaincodeLanguage
   ) throws InterruptedException {
     //./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
-    String[] commands = { "./network.sh", "deplyCC","-ccn",chaincodeName,"-ccp",chaincodePath,"-ccl",chaincodeLanguage};
+    String[] commands = { "./network.sh", "deployCC","-ccn",chaincodeName,"-ccp",chaincodePath,"-ccl",chaincodeLanguage};
     String path = "/root/workspace/fabric-samples/test-network";
     FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
