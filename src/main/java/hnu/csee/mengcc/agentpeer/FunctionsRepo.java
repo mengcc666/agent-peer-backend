@@ -1,4 +1,4 @@
-package hnu.csee.mengcc.agent_peer;
+package hnu.csee.mengcc.agentpeer;
 
 import java.io.BufferedReader;
 import java.io.File;

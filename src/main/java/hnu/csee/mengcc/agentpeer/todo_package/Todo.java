@@ -1,11 +1,13 @@
-package hnu.csee.mengcc.agent_peer.todo_package;
+package hnu.csee.mengcc.peer.todo_package;
 
+import hnu.csee.mengcc.agentpeer.user.*;
 import org.springframework.data.annotation.Id;
-import hnu.csee.mengcc.agent_peer.user.*;
 
 public class Todo {
+
   @Id
   private String id;
+
   private String desc;
   private boolean completed;
 
@@ -35,11 +37,11 @@ public class Todo {
     this.completed = completed;
   }
 
-  public User getUser(){
+  public User getUser() {
     return user;
   }
 
-  public void setUser(User user){
-    this.user=user;
+  public void setUser(User user) {
+    this.user = user;
   }
 }

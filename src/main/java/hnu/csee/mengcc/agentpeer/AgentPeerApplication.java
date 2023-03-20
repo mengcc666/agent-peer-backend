@@ -1,6 +1,6 @@
-package hnu.csee.mengcc.agent_peer;
+package hnu.csee.mengcc.agentpeer;
 
-import hnu.csee.mengcc.agent_peer.FunctionsRepo;
+import hnu.csee.mengcc.agentpeer.FunctionsRepo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,8 @@ public class AgentPeerApplication {
 
   @GetMapping(value = "/hello")
   public String hello(
-      @RequestParam(value = "name", defaultValue = "World") String name) {
+    @RequestParam(value = "name", defaultValue = "World") String name
+  ) {
     return String.format("Hello %s!", name);
   }
 
@@ -48,9 +49,15 @@ public class AgentPeerApplication {
   @GetMapping(value = "/createChannel")
   public void createChannel(
     @RequestParam(value = "name", defaultValue = "mychannel") String channelName
-  ) throws InterruptedException{
+  ) throws InterruptedException {
     //./network.sh up createChannel -c mychannel -ca
-    String[] commands = { "./network.sh", "createChannel", "-c", channelName, "-ca" };
+    String[] commands = {
+      "./network.sh",
+      "createChannel",
+      "-c",
+      channelName,
+      "-ca",
+    };
     String path = "/root/workspace/fabric-samples/test-network";
     FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
@@ -66,12 +73,30 @@ public class AgentPeerApplication {
 
   @GetMapping(value = "/deployChaincode")
   public void deployChaincode(
-    @RequestParam(value = "chaincodeName", defaultValue = "basic") String chaincodeName,
-    @RequestParam(value = "chaincodePath", defaultValue = "../asset-transfer-basic/chaincode-javascript/") String chaincodePath,
-    @RequestParam(value = "chaincodeLanguage", defaultValue = "javascript") String chaincodeLanguage
+    @RequestParam(
+      value = "chaincodeName",
+      defaultValue = "basic"
+    ) String chaincodeName,
+    @RequestParam(
+      value = "chaincodePath",
+      defaultValue = "../asset-transfer-basic/chaincode-javascript/"
+    ) String chaincodePath,
+    @RequestParam(
+      value = "chaincodeLanguage",
+      defaultValue = "javascript"
+    ) String chaincodeLanguage
   ) throws InterruptedException {
     //./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
-    String[] commands = { "./network.sh", "deployCC","-ccn",chaincodeName,"-ccp",chaincodePath,"-ccl",chaincodeLanguage};
+    String[] commands = {
+      "./network.sh",
+      "deployCC",
+      "-ccn",
+      chaincodeName,
+      "-ccp",
+      chaincodePath,
+      "-ccl",
+      chaincodeLanguage,
+    };
     String path = "/root/workspace/fabric-samples/test-network";
     FunctionsRepo f = new FunctionsRepo();
     f.InvokeCommandAtSpecifiedPath(commands, path);
