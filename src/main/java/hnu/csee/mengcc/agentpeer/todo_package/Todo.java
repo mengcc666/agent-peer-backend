@@ -1,4 +1,4 @@
-package hnu.csee.mengcc.peer.todo_package;
+package hnu.csee.mengcc.agentpeer.todo_package;
 
 import hnu.csee.mengcc.agentpeer.user.*;
 import org.springframework.data.annotation.Id;
