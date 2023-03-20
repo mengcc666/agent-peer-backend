@@ -10,7 +10,7 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>hnu.csee.mengcc</groupId>
-	<artifactId>agent_peer</artifactId>
+	<artifactId>agentpeer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>agent_peer</name>
 	<description>Agent peer demo project for Spring Boot</description>
