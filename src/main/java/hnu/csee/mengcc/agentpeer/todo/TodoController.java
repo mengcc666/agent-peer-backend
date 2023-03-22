@@ -24,3 +24,16 @@
 //     return todos;
 //   }
 // }
+@RestController
+@RequestMapping("/todos")
+public class TodoController{
+
+    private TodoRepository repository;
+
+    @Autowired
+    public TodoController(TodoRepository repository){
+        this.repository=repository;
+    }
+
+
+}
