@@ -1,6 +1,8 @@
 package hnu.csee.mengcc.agentpeer;
 
 import hnu.csee.mengcc.agentpeer.FunctionsRepo;
+import com.google.gson.Gson;
+import hnu.csee.mengcc.agentpeer.response.UserReponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +24,9 @@ public class AgentPeerApplication {
   ) {
     UserReponse userResponse=new UserReponse();
     userResponse.message=name;
-    return userResponse;
+    Gson gson = new Gson();
+    String json = gson.toJson(userResponse);
+    return json;
   }
 
   @GetMapping(value = "/startNetwork")
