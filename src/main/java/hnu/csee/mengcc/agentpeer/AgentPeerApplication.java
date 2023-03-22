@@ -20,7 +20,9 @@ public class AgentPeerApplication {
   public String hello(
     @RequestParam(value = "name", defaultValue = "World") String name
   ) {
-    return String.format("Hello %s!", name);
+    UserReponse userResponse=new UserReponse();
+    userResponse.message=name;
+    return userResponse;
   }
 
   @GetMapping(value = "/startNetwork")
