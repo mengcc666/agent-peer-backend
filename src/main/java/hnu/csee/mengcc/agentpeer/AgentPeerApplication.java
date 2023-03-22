@@ -7,6 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@Configuration
+public class CorsConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/hello")
+            .allowedOrigins("*")
+            .allowedMethods("GET", "POST")
+            .allowedHeaders("*");
+    }
+}
+
+
 @SpringBootApplication
 @RestController
 public class AgentPeerApplication {
