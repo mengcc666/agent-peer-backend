@@ -16,6 +16,16 @@ public class AgentPeerApplication {
     SpringApplication.run(AgentPeerApplication.class, args);
   }
 
+  @GetMapping("user")
+  public String helloUser() {
+      return "Hello User";
+  }
+
+  @GetMapping("admin")
+  public String helloAdmin() {
+      return "Hello Admin";
+  }
+
   @GetMapping(value = "/hello")
   public String hello(
     @RequestParam(value = "name", defaultValue = "World") String name
