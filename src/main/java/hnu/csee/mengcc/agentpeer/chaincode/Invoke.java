@@ -43,7 +43,7 @@ public class Invoke {
     return builder.connect();
   }
 
-  @GetMapping
+  @GetMapping("invokeChaincode")
   public void invokeSubmitChaincode(
     @RequestParam(
       value = "contractName",
