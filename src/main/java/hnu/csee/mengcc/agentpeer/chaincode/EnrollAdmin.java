@@ -28,10 +28,16 @@ public class EnrollAdmin {
       "/root/workspace/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem"
     );
     props.put("allowAllHostNames", "true");
-    HFCAClient caClient = HFCAClient.createNewInstance(
-      "https://localhost:7054",
-      props
-    );
+    try{
+      HFCAClient caClient = HFCAClient.createNewInstance(
+        "https://localhost:7054",
+        props
+      );
+    }catch (Exception e) {
+      System.err.println(e);
+    }
+
+
     CryptoSuite cryptoSuite = CryptoSuiteFactory.getDefault().getCryptoSuite();
     caClient.setCryptoSuite(cryptoSuite);
 
