@@ -47,7 +47,7 @@ public class Invoke {
       value = "contractName",
       defaultValue = "basic"
     ) String contractName,
-    @RequestParam(value = "transactionName") String transactionName
+    @RequestParam(value = "transactionName",defaultValue="InitLedger") String transactionName
   ) {
     // enrolls the admin and registers the user
     try {
@@ -68,7 +68,7 @@ public class Invoke {
       System.out.println(
         "Submit Transaction: InitLedger creates the initial set of assets on the ledger."
       );
-      contract.submitTransaction("InitLedger");
+      contract.submitTransaction(transactionName);
 
       System.out.println("\n");
       result = contract.evaluateTransaction("GetAllAssets");
