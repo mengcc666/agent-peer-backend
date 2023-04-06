@@ -50,7 +50,7 @@ public class Invoke {
       defaultValue = "basic"
     ) String contractName,
     @RequestParam(value = "transactionName",defaultValue="InitLedger") String transactionName
-  ) {
+  )  throws Exception {
     // enrolls the admin and registers the user
     try {
       EnrollAdmin.main(null);
