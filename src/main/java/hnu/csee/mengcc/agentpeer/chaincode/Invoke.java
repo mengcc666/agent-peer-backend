@@ -42,7 +42,7 @@ public class Invoke {
   }
 
   @GetMapping
-  public void invokeChaincode(
+  public void invokeSubmitChaincode(
     @RequestParam(
       value = "contractName",
       defaultValue = "basic"
