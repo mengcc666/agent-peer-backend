@@ -29,16 +29,29 @@ public class EnrollAdmin {
         "/root/workspace/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem"
       );
       props.put("allowAllHostNames", "true");
+      try {
+        Class.forName("org.hyperledger.fabric.sdk.helper.Utils");
+        System.out.println(
+          "Class org.hyperledger.fabric.sdk.helper.Utils loaded successfully"
+        );
+      } catch (ClassNotFoundException e) {
+        System.err.println(
+          "Error loading class org.hyperledger.fabric.sdk.helper.Utils"
+        );
+        e.printStackTrace();
+      }
       HFCAClient caClient = HFCAClient.createNewInstance(
         "https://localhost:7054",
         props
       );
-      CryptoSuite cryptoSuite = CryptoSuiteFactory.getDefault().getCryptoSuite();
+      CryptoSuite cryptoSuite = CryptoSuiteFactory
+        .getDefault()
+        .getCryptoSuite();
       caClient.setCryptoSuite(cryptoSuite);
-  
+
       // Create a wallet for managing identities
       Wallet wallet = Wallets.newFileSystemWallet(Paths.get("wallet"));
-  
+
       // Check to see if we've already enrolled the admin user.
       if (wallet.get("admin") != null) {
         System.out.println(
@@ -46,7 +59,7 @@ public class EnrollAdmin {
         );
         return;
       }
-  
+
       // Enroll the admin user, and import the new identity into the wallet.
       final EnrollmentRequest enrollmentRequestTLS = new EnrollmentRequest();
       enrollmentRequestTLS.addHost("localhost");
@@ -64,7 +77,5 @@ public class EnrollAdmin {
     } catch (Exception e) {
       System.err.println(e);
     }
-
-
   }
 }
