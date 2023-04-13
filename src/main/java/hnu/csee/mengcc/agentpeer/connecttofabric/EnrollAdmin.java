@@ -18,7 +18,7 @@ import org.hyperledger.fabric_ca.sdk.HFCAClient;
  * @Version 1.0
  */
 public class EnrollAdmin {
-    public static void enrollAdmin() throws Exception {
+    public void enroll() throws Exception {
 
         // Create a CA client for interacting with the CA.
         Properties props = new Properties();
@@ -40,7 +40,7 @@ public class EnrollAdmin {
 
         // Enroll the admin user, and import the new identity into the wallet.
         final EnrollmentRequest enrollmentRequestTLS = new EnrollmentRequest();
-        enrollmentRequestTLS.addHost("localhost");
+        enrollmentRequestTLS.addHost("101.34.79.126");
         enrollmentRequestTLS.setProfile("tls");
         Enrollment enrollment = caClient.enroll("admin", "adminpw", enrollmentRequestTLS);
         Identity user = Identities.newX509Identity("Org1MSP", enrollment);
