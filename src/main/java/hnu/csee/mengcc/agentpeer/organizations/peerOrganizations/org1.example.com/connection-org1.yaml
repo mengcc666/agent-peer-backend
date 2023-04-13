@@ -16,7 +16,7 @@ organizations:
     - ca.org1.example.com
 peers:
   peer0.org1.example.com:
-    url: grpcs://localhost:7051
+    url: grpcs://101.34.79.126:7051
     tlsCACerts:
       pem: |
           -----BEGIN CERTIFICATE-----
@@ -33,16 +33,16 @@ peers:
           AgNHADBEAiB//a0U6rnmG2TNiLA0/GVoQ9IhFDbkEKLLMJXKKpw8iAIgDL+mGRfs
           WTRP7CNo0CW0eBCkebD0dD3nj/0TqCi5qR4=
           -----END CERTIFICATE-----
-          
+
     grpcOptions:
       ssl-target-name-override: peer0.org1.example.com
       hostnameOverride: peer0.org1.example.com
 certificateAuthorities:
   ca.org1.example.com:
-    url: https://localhost:7054
+    url: https://101.34.79.126:7054
     caName: ca-org1
     tlsCACerts:
-      pem: 
+      pem:
         - |
           -----BEGIN CERTIFICATE-----
           MIICJjCCAc2gAwIBAgIULMrf2arSaDlWn/tGK7jkG1ychrYwCgYIKoZIzj0EAwIw
@@ -58,6 +58,6 @@ certificateAuthorities:
           AgNHADBEAiB//a0U6rnmG2TNiLA0/GVoQ9IhFDbkEKLLMJXKKpw8iAIgDL+mGRfs
           WTRP7CNo0CW0eBCkebD0dD3nj/0TqCi5qR4=
           -----END CERTIFICATE-----
-          
+
     httpOptions:
       verify: false
