@@ -19,12 +19,23 @@
 		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<java.version>17</java.version>
 	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.opentelemetry</groupId>
+				<artifactId>opentelemetry-bom</artifactId>
+				<version>1.25.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-api</artifactId>
 		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
 		<dependency>
@@ -42,18 +53,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.hyperledger.fabric-sdk-java/fabric-sdk-java -->
 		<dependency>
-			<groupId>org.hyperledger.fabric-sdk-java</groupId>
-			<artifactId>fabric-sdk-java</artifactId>
-			<version>2.2.21</version>
+			<groupId>org.hyperledger.fabric</groupId>
+			<artifactId>fabric-gateway-java</artifactId>
+			<version>2.1.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>io.opentelemetry</groupId>
-			<artifactId>opentelemetry-api</artifactId>
-			<version>1.10.0</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -61,12 +66,6 @@
 			<version>29.0-jre</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.hyperledger.fabric/fabric-gateway-java -->
-		<dependency>
-			<groupId>org.hyperledger.fabric</groupId>
-			<artifactId>fabric-gateway-java</artifactId>
-			<version>2.1.1</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -105,6 +104,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
 		</plugins>
 	</build>
 
