@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+
+
 /**
  * @Author Mengcc
  * @Date 2023/4/12 10:16
@@ -53,23 +55,23 @@ public class Connect {
     }
 
     @GetMapping("connect/invokeChaincode")
-    public String invokeChaincode(){
+    public String invokeChaincode() {
         // connect to the network and invoke the smart contract
         try (Gateway gateway = connect()) {
 
             // get the network and contract
             Network network = gateway.getNetwork("mychannel");
-            System.out.println(network.toString());
-//            Contract contract = network.getContract("basic");
-//
-//            byte[] result;
-//
+            System.out.println("mengcc : "+network.toString());
+            Contract contract = network.getContract("basic");
+
+            byte[] result;
+
 //            System.out.println("Submit Transaction: InitLedger creates the initial set of assets on the ledger.");
 //            contract.submitTransaction("InitLedger");
 //
 //            System.out.println("\n");
-//            result = contract.evaluateTransaction("GetAllAssets");
-//            System.out.println("Evaluate Transaction: GetAllAssets, result: " + new String(result));
+            result = contract.evaluateTransaction("GetAllAssets");
+            System.out.println("Evaluate Transaction: GetAllAssets, result: " + new String(result));
 
 //            System.out.println("\n");
 //            System.out.println("Submit Transaction: CreateAsset asset13");

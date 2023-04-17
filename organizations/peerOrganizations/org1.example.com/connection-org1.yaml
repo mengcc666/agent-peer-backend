@@ -20,18 +20,18 @@ peers:
     tlsCACerts:
       pem: |
           -----BEGIN CERTIFICATE-----
-          MIICJjCCAc2gAwIBAgIUDKSQvya8mmS5ljWcW15+aUh+doAwCgYIKoZIzj0EAwIw
+          MIICJjCCAc2gAwIBAgIUZVgBcn+Sb+zVTF7bp9zckv3ZPM8wCgYIKoZIzj0EAwIw
           cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH
           EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
-          Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjMwNDE0MDcyOTAwWhcNMzgwNDEwMDcyOTAw
+          Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjMwNDE3MDY1MzAwWhcNMzgwNDEzMDY1MzAw
           WjBwMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExDzANBgNV
           BAcTBkR1cmhhbTEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMT
-          Y2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABD01
-          gciaxr/eDNqVHbqSgYiUj7Lm/lMTNCK+kzTJyqHXZXYI/fuoJoYdEjDYIJ5K6ER+
-          Bid+3ew+Z2DQUeBe7QujRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAG
-          AQH/AgEBMB0GA1UdDgQWBBSrdBlzeBawjjL8p9fXkVgiAwM84zAKBggqhkjOPQQD
-          AgNHADBEAiAXkiSabJmU1TJ98UZ45waiTnoxCcgvwZ9hXS64jS3OYwIgdK7iZBDk
-          9Os5MO4znVN+9ScboRSZbjId6StLs2XuaqA=
+          Y2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBDd
+          yhEeVSwEJHPoJri2A0vYQUbCSviJxTwLIUbCN8P16wHg2jUbg7jz6YC6gteUosVL
+          BcEURXhXb/wK0vOd/AyjRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAG
+          AQH/AgEBMB0GA1UdDgQWBBTks7q3L70Fqt++2xd52V4HcoS1wjAKBggqhkjOPQQD
+          AgNHADBEAiAUsFypJ6N0il+C17wrYKQzClTtE0pl+uKqUNfAQkql/gIgXC2Lapr4
+          qhdntVOdViOuf0hkk0EhI/XXjqmgU3QsTcM=
           -----END CERTIFICATE-----
 
     grpcOptions:
@@ -39,24 +39,24 @@ peers:
       hostnameOverride: peer0.org1.example.com
 certificateAuthorities:
   ca.org1.example.com:
-    url: https://101.34.79.126:7054
+    url: https://localhost:7054
     caName: ca-org1
     tlsCACerts:
       pem:
         - |
           -----BEGIN CERTIFICATE-----
-          MIICJjCCAc2gAwIBAgIUDKSQvya8mmS5ljWcW15+aUh+doAwCgYIKoZIzj0EAwIw
+          MIICJjCCAc2gAwIBAgIUZVgBcn+Sb+zVTF7bp9zckv3ZPM8wCgYIKoZIzj0EAwIw
           cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH
           EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
-          Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjMwNDE0MDcyOTAwWhcNMzgwNDEwMDcyOTAw
+          Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjMwNDE3MDY1MzAwWhcNMzgwNDEzMDY1MzAw
           WjBwMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExDzANBgNV
           BAcTBkR1cmhhbTEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMT
-          Y2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABD01
-          gciaxr/eDNqVHbqSgYiUj7Lm/lMTNCK+kzTJyqHXZXYI/fuoJoYdEjDYIJ5K6ER+
-          Bid+3ew+Z2DQUeBe7QujRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAG
-          AQH/AgEBMB0GA1UdDgQWBBSrdBlzeBawjjL8p9fXkVgiAwM84zAKBggqhkjOPQQD
-          AgNHADBEAiAXkiSabJmU1TJ98UZ45waiTnoxCcgvwZ9hXS64jS3OYwIgdK7iZBDk
-          9Os5MO4znVN+9ScboRSZbjId6StLs2XuaqA=
+          Y2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBDd
+          yhEeVSwEJHPoJri2A0vYQUbCSviJxTwLIUbCN8P16wHg2jUbg7jz6YC6gteUosVL
+          BcEURXhXb/wK0vOd/AyjRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAG
+          AQH/AgEBMB0GA1UdDgQWBBTks7q3L70Fqt++2xd52V4HcoS1wjAKBggqhkjOPQQD
+          AgNHADBEAiAUsFypJ6N0il+C17wrYKQzClTtE0pl+uKqUNfAQkql/gIgXC2Lapr4
+          qhdntVOdViOuf0hkk0EhI/XXjqmgU3QsTcM=
           -----END CERTIFICATE-----
 
     httpOptions:
