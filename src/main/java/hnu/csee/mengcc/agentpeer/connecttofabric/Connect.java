@@ -61,7 +61,7 @@ public class Connect {
 
             // get the network and contract
             Network network = gateway.getNetwork("mychannel");
-            System.out.println("mengcc : "+network.toString());
+//            System.out.println("mengcc : "+network.toString());
             Contract contract = network.getContract("basic");
 
             byte[] result;
