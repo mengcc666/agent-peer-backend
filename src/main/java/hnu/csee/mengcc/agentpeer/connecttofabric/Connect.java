@@ -84,6 +84,7 @@ public class Connect {
             System.out.println("\n");
             result = contract.evaluateTransaction("GetAllAssets");
             System.out.println("Evaluate Transaction: GetAllAssets, result: " + new String(result));
+            return "Invoke successfully!\n Result:\n"+new String(result);
         }
         catch(Exception e){
             System.err.println(e);
